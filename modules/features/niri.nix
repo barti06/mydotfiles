@@ -28,7 +28,14 @@
                 xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
                 input = {
-                    keyboard.xkb.layout = "us";
+                    keyboard = {
+                        xkb = {
+                            layout = "us,latam";
+                            options = "grp:alt_shift_toggle";
+                        };
+                        repeat-rate = 40;
+                        repeat-delay = 250;
+                    };
                     mouse = {
                         accel-profile = "flat";
                         accel-speed = 0.0;

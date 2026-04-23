@@ -64,7 +64,6 @@
             vim
             wget
             git
-            gh
             wl-clipboard
             ripgrep
             fd

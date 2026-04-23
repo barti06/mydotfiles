@@ -36,8 +36,12 @@
                     name = "barti06";
                     email = "bartipdl1@gmail.com";
                 };
-                credential.helper = "${pkgs.gitFull}/bin/gh auth git-credential";
+                credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
             };
+        };
+
+        programs.gh = {
+            enable = true;
         };
 
         programs.fish = {

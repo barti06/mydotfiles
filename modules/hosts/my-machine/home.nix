@@ -14,18 +14,52 @@
         home.username = "barti";
         home.homeDirectory = "/home/barti";
         home.stateVersion = "26.05";
-        
+
         home.packages = with pkgs; [
             kitty
             spotify
             discord
+            zathura
+            nemo
+            papirus-icon-theme
+            ffmpegthumbnailer
+            evince
         ];
-        
+
         home.pointerCursor = {
             gtk.enable = true;
             package = pkgs.apple-cursor;
             name = "macOS";
             size = 24;
+        };
+
+        gtk = {
+            enable = true;
+            iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme;
+            };
+        };
+
+        xdg.desktopEntries.nemo = {
+            name = "Nemo";
+            genericName = "File Manager";
+            exec = "nemo %U";
+            icon = "/home/barti/Pictures/folder-icon.png"; 
+            terminal = false;
+            categories = [ "Utility" "Core" "System" ];
+            mimeType = [ "inode/directory" ];
+            settings = {
+                StartupWMClass = "nemo";
+            };
+        };
+
+        xdg.mimeApps = {
+            enable = true;
+            defaultApplications = {
+            "inode/directory" = "nemo.desktop";
+            "application/x-gnome-saved-search" = "nemo.desktop";
+            };
         };
 
         programs.git = {

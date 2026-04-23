@@ -51,7 +51,13 @@
 
         nix.settings.experimental-features = [ "nix-command" "flakes" ];
         system.stateVersion = "26.05";
-        
+
+        fileSystems."/mnt/ssd-sata" = {
+            device = "/dev/disk/by-uuid/6EACD427ACD3E79B";
+            fsType = "ntfs-3g";
+            options = [ "rw" "uid=1000" "gid=100" "umask=0022" ];
+        };
+
         environment.systemPackages = with pkgs; [
             jq
             psmisc
@@ -69,7 +75,11 @@
             fd
             fzf
             pwvucontrol
-            kdePackages.dolphin
+            ntfs3g
         ];
+
+        environment.sessionVariables = {
+            FILE_MANAGER = "nemo";
+        };
     };
 }

@@ -1,5 +1,6 @@
 // startup services
 spawn-at-startup "hyprpaper"
+spawn-at-startup "hyprlock"
 spawn-at-startup "waybar"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,pkcs11"
 spawn-at-startup "easyeffects" "--gapplication-service"
@@ -21,7 +22,7 @@ input {
     keyboard {
         xkb {
             layout "us,latam"
-            options "grp:alt_shift_toggle"
+            // options "grp:alt_shift_toggle"
         }
         repeat-rate 40
         repeat-delay 250
@@ -32,7 +33,19 @@ input {
         accel-profile "flat"
         accel-speed 0.0
     }
+    trackpoint {
+        accel-speed 0.0
+        accel-profile "flat"
+        scroll-method "on-button-down"
+        scroll-button 274
+        middle-emulation
+    }
 }
+
+// output "eDP-1" {
+//     mode "1920x1080@60.008"
+//     scale 1.0
+// }
 
 output "ASUSTek COMPUTER INC VG27AQA1A RALMQS044446" {
     mode "2560x1440@165.003"
@@ -74,6 +87,9 @@ binds {
     Mod+Q { spawn "kitty"; }
     Mod+E { spawn "nemo"; }
     Mod+Space { spawn "rofi" "-show" "drun"; }
+
+    // misc
+    Mod+Shift+Space { switch-layout "next"; }
 
     // screenshots
     Mod+Insert { spawn "hyprshot" "-m" "region" "--clipboard-only"; }

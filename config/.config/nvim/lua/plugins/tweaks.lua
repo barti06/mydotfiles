@@ -3,17 +3,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      servers = {
-        clangd = {
-          cmd = {
-            "clangd",
-            "--background-index",
-            "--header-insertion=never", -- stop automatic header insertion
-            -- "--fallback-style=none", -- no formatting
-            "--completion-style=detailed",
-          },
-        },
-      },
       setup = {
         clangd = function(_, opts)
           -- use standard nvim api instead of LazyVim's internal utilities
@@ -43,19 +32,13 @@ return {
         cpp = { "clang-format" },
         objc = { "clang-format" },
         objcpp = { "clang-format" },
+        cmake = { "cmake_format" },
       },
       formatters = {
         ["clang-format"] = {
           prepend_args = { "-style=file" },
         },
       },
-    },
-  },
-  {
-    "mason-org/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {},
-      automatic_installation = false,
     },
   },
 }

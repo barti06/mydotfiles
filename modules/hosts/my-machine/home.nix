@@ -41,6 +41,7 @@
           hyprshot
           swaynotificationcenter
           gimp
+          kdePackages.kolourpaint
         ];
 
         services.swaync = {
@@ -108,7 +109,11 @@
               set -l git (fish_git_prompt | string trim -c '() ')
 
               set_color green
-              echo -n "$USER@$hostname "
+              echo -n "$USER"
+              set_color normal
+              echo -n "@"
+              set_color red
+              echo -n "$hostname "
 
               set_color blue
               echo -n (prompt_pwd)
@@ -131,9 +136,10 @@
 
         programs.kitty = {
           enable = true;
+          themeFile = "gruvbox-dark";
           font = {
             name = "JetBrainsMono Nerd Font";
-            size = 20;
+            size = 18;
           };
         };
 

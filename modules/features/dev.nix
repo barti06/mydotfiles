@@ -1,28 +1,31 @@
-{ pkgs, ... }: {
-    environment.systemPackages = with pkgs; [
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
     clang
     clang-tools
     cmake
+    cmake-language-server
+    cmake-format
     ninja
     gdb
     lldb
+
     nodejs_25
     python3
+    cargo
+
     tree-sitter
     lazygit
-    cargo
     lua-language-server
     pyright
     typescript-language-server
     bash-language-server
     nixd
-    mesa
-    libGL
-    vulkan-loader
-    vulkan-tools
+
     vulkan-headers
+    vulkan-tools
     vulkan-validation-layers
-    mesa-demos
     renderdoc
-    ];
+    mesa-demos
+  ];
 }

@@ -1,265 +1,88 @@
- {
-
-"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-
-"logo": {
-
-"type": "builtin",
-
-"height": 15,
-
-"width": 30,
-
-"padding": {
-
-"top": 5,
-
-"left": 3
-
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "builtin",
+    "padding": {
+      "top": 2,
+      "left": 2
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[35m󰋗 System Information"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[35m========================================="
+    },
+    // --- OS SECTION ---
+    {
+      "type": "custom",
+      "format": "\u001b[31m▢ OS"
+    },
+    {
+      "type": "os",
+      "key": "  \u001b[31m├─ 󱄅 Distro \u001b[39m>",
+      "format": "{name} {version}, btw"
+    },
+    {
+    "type": "packages",
+    "key": "  \u001b[31m├─ 󰏗 Packages \u001b[39m>",
+    },
+    {
+      "type": "kernel",
+      "key": "  \u001b[31m└─  Kernel \u001b[39m>"
+    },
+    // --- DESKTOP ENVIRONMENT SECTION ---
+    {
+      "type": "custom",
+      "format": "\u001b[32m▢ Desktop Environment"
+    },
+    {
+      "type": "wm",
+      "key": "  \u001b[32m├─  WM \u001b[39m>"
+    },
+    {
+      "type": "wmtheme",
+      "key": "  \u001b[32m└─ 󰉼 Theme \u001b[39m>"
+    },
+    // --- TERMINAL SECTION ---
+    {
+      "type": "custom",
+      "format": "\u001b[33m▢ Terminal"
+    },
+    {
+      "type": "shell",
+      "key": "  \u001b[33m├─  Shell \u001b[39m>"
+    },
+    {
+      "type": "terminal",
+      "key": "  \u001b[33m└─  Term \u001b[39m>"
+    },
+    // --- HARDWARE SECTION ---
+    {
+      "type": "custom",
+      "format": "\u001b[34m▢ Hardware"
+    },
+    {
+      "type": "cpu",
+      "key": "  \u001b[34m├─  CPU \u001b[39m>"
+    },
+    {
+      "type": "gpu",
+      "key": "  \u001b[34m├─ 󰢮 GPU \u001b[39m>",
+      "hideType": "none"
+    },
+    {
+      "type": "memory",
+      "key": "  \u001b[34m└─ 󰑭 RAM \u001b[39m>"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
 }
-
-},
-
-"modules": [
-
-"break",
-
-{
-
-"type": "custom",
-
-"format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
-
-},
-
-{
-
-"type": "host",
-
-"key": "│ ├󰌢 PC      ",
-
-"keyColor": "green"
-
-},
-
-{
-
-"type": "cpu",
-
-"key": "│ ├󰻠 CPU     ",
-
-"keyColor": "green"
-
-},
-
-{
-
-"type": "gpu",
-
-"key": "│ ├󰍹 GPU     ",
-
-"keyColor": "green"
-
-},
-
-{
-
-"type": "disk",
-
-"key": "│ ├󰋊 Disk(s) ",
-
-"keyColor": "green"
-
-},
-
-{
-
-"type": "memory",
-
-"key": "└ └󰑭 Memory  ",
-
-"keyColor": "green"
-
-},
-
-{
-
-"type": "custom",
-
-"format": "\u001b[90m└────────────────────────────────────────────────────┘"
-
-},
-
-"break",
-
-{
-
-"type": "custom",
-
-"format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
-
-},
-
-{
-
-"type": "os",
-
-"key": "│ ├❄ OS       ",
-
-"keyColor": "yellow",
-
-"format": "{name} {version}, btw"
-
-},
-
-{
-
-"type": "kernel",
-
-"key": "│ ├ Kernel   ",
-
-"keyColor": "yellow"
-
-},
-
-{
-
-"type": "bios",
-
-"key": "│ ├󰖡 BIOS     ",
-
-"keyColor": "yellow"
-
-},
-
-{
-
-"type": "packages",
-
-"key": "│ ├󰏗 Packages ",
-
-"keyColor": "yellow"
-
-},
-
-{
-
-"type": "shell",
-
-"key": "└ └󰞷 Shell    ",
-
-"keyColor": "yellow"
-
-},
-
-"break",
-
-{
-
-"type": "de",
-
-"key": "󰧨 Desktop     ",
-
-"keyColor": "blue"
-
-},
-
-{
-
-"type": "lm",
-
-"key": "│ ├󰍁 Login    ",
-
-"keyColor": "blue"
-
-},
-
-{
-
-"type": "wm",
-
-"key": "│ ├󱂬 WM       ",
-
-"keyColor": "blue"
-
-},
-
-{
-
-"type": "wmtheme",
-
-"key": "│ ├󰉦 Theme    ",
-
-"keyColor": "blue"
-
-},
-
-{
-
-"type": "terminal",
-
-"key": "└ └󰆍 Terminal ",
-
-"keyColor": "blue"
-
-},
-
-{
-
-"type": "custom",
-
-"format": "\u001b[90m└────────────────────────────────────────────────────┘"
-
-},
-
-"break",
-
-{
-
-"type": "custom",
-
-"format": "\u001b[90m┌───────────────────────Others───────────────────────┐"
-
-},
-
-{
-
-"type": "uptime",
-
-"key": " › Uptime   ",
-
-"keyColor": "magenta"
-
-},
-
-{
-
-"type": "datetime",
-
-"key": " › DateTime ",
-
-"keyColor": "magenta"
-
-},
-
-{
-
-"type": "custom",
-
-"format": "\u001b[90m└────────────────────────────────────────────────────┘"
-
-},
-
-{
-
-"type": "colors",
-
-"paddingLeft": 2,
-
-"symbol": "circle"
-
-}
-
-]
-
-} 

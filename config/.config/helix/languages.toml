@@ -1,0 +1,32 @@
+# Define the clangd Language Server
+[language-server.clangd]
+command = "clangd"
+args = ["--background-index", "--clang-tidy"]
+
+# Configure C
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
+auto-format = true
+
+# Configure C++
+[[language]]
+name = "cpp"
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
+auto-format = true
+
+# Configure Slang
+[[language]]
+name = "slang"
+scope = "source.slang"
+injection-regex = "slang"
+file-types = ["slang"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = " " }
+auto-format = true
+
+# Define the formatter explicitly using clang-format
+formatter = { command = "clang-format", args = ["--assume-filename=*.cs"] }

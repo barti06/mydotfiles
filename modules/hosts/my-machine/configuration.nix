@@ -29,8 +29,18 @@ in
     gamingModule
   ];
 
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 20 * 1024;
+    }
+  ];
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka
+    nerd-fonts.mononoki
+    maple-mono.NF
     dejavu_fonts
     liberation_ttf
     noto-fonts-cjk-sans
@@ -183,6 +193,7 @@ in
     fastfetch
     stow
     neovim
+    helix
     vim
     wget
     git

@@ -7,3 +7,8 @@ AllowShortLoopsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: false
 AllowShortEnumsOnASingleLine: false
 ColumnLimit: 90
+PointerAlignment: Left
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterControlStatement: Never
+  BeforeElse: true

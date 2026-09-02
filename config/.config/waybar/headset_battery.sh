@@ -3,7 +3,7 @@
 BATTERY=$(headsetcontrol -b | grep "Level:" | awk '{print $2}')
 
 if [ -z "$BATTERY" ]; then
-    echo "🎧 N/A"
+    echo ""
 else
     echo "🎧 $BATTERY"
 fi

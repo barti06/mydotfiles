@@ -10,11 +10,9 @@
     gdb
     lldb
 
-    nodejs_25
     python3
     cargo
 
-    tree-sitter
     lazygit
     lua-language-server
     pyright

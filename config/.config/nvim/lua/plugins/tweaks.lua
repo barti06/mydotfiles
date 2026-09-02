@@ -23,6 +23,18 @@ return {
       },
     },
   },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      explorer = {
+        enabled = true,
+      },
+    },
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
+  },
   -- STOP LAZYVIM'S AUTO-FORMATTER FOR C/C++
   {
     "stevearc/conform.nvim",

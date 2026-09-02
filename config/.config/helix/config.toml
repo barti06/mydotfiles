@@ -1,0 +1,56 @@
+theme = "tokyonight"
+
+[editor]
+bufferline = "multiple"
+line-number = "relative"
+mouse = true
+cursorline = true
+true-color = true
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+# Left block: Mode indicator, Git branch/status, and LSP spinner
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "spacer",
+  "file-name",
+  "file-modification-indicator"
+]
+
+# Center block: Active diagnostics summary
+center = ["diagnostics"]
+
+# Right block: Selections, position, and file specs
+right = [
+  "selections",
+  "position",
+  "position-percentage",
+  "spacer",
+  "file-type",
+  "file-encoding"
+]
+
+# Lualine-style section separator
+separator = "│"
+
+# Mode text labels (customizable to match full words or short abbreviations)
+[editor.statusline.mode]
+normal = "NORMAL"
+insert = "INSERT"
+select = "VISUAL"
+
+[keys.normal]
+y = "yank_main_selection_to_clipboard"
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+K = "hover"

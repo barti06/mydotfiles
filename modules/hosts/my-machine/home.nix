@@ -24,6 +24,7 @@
           vesktop
           kdePackages.okular
           papirus-icon-theme
+          ffmpeg
           ffmpegthumbnailer
           evince
           corectrl
@@ -42,6 +43,14 @@
           swaynotificationcenter
           gimp
           kdePackages.kolourpaint
+          tmux
+          hyprlock
+          man-pages
+          xournalpp
+          luarocks
+          tree-sitter
+          nodejs
+          lua5_1
         ];
 
         services.swaync = {
@@ -63,7 +72,9 @@
           };
         };
 
-        xdg.configFile."fastfetch/config.jsonc".source = ./fastfetch.jsonc;
+        xdg.configFile = {
+          "fastfetch/config.jsonc".source = ./fastfetch.jsonc;
+        };
 
         programs.git = {
           enable = true;
@@ -99,7 +110,7 @@
           shellAliases = {
             ls = "eza -la --icons --group-directories-first";
             btw = "echo i use nixos, btw";
-            "!edit" = "cd ~/cfg && nvim";
+            "!edit" = "cd ~/cfg && hx";
             "!rebuild" = "sudo nixos-rebuild switch --flake ~/cfg#${hostname}";
             "!plasma" = "dbus-run-session startplasma-wayland";
             "!niri" = "niri-session";
@@ -108,21 +119,17 @@
             fish_prompt = ''
               set -l git (fish_git_prompt | string trim -c '() ')
 
-              set_color green
-              echo -n "$USER"
-              set_color normal
-              echo -n "@"
               set_color red
-              echo -n "$hostname "
+              echo -n "$USER"
 
               set_color blue
-              echo -n (prompt_pwd)
-
-              set_color yellow
               echo " $git"
 
-              set_color -o normal
-              echo -n '$ '
+              set_color yellow
+              echo -n (prompt_pwd)
+
+              set_color normal
+              echo -n ' φ '
 
               set_color normal
             '';
@@ -131,15 +138,6 @@
               echo -n "[$(date +%H:%M:%S)] "
               set_color normal
             '';
-          };
-        };
-
-        programs.kitty = {
-          enable = true;
-          themeFile = "gruvbox-dark";
-          font = {
-            name = "JetBrainsMono Nerd Font";
-            size = 18;
           };
         };
 
